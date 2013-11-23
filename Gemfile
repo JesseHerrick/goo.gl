@@ -1,4 +1,4 @@
 source 'https://rubygems.org/'
 
-gem 'httparty'
-gem 'multijson'
+gem 'rest-client'
+gem 'multi_json'
