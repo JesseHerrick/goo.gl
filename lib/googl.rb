@@ -1,14 +1,17 @@
 $:.unshift File.dirname(__FILE__)
 
 require 'googl/shorten'
+require 'googl/expand'
 
 class Googl
-	def initialize(url)
-		@@url = url
-		unless @@url.include?("http://") || @@url.include?("https://")
-			@@url = "http://#{@@url}"
+	attr_accessor :url
+
+	url = String.new
+
+	unless url.nil?
+		if url.include?("http://") || url.include?("https://")
+			url = "http://#{url}"
 		end
-		abort "ERROR: URL empty." if @@url.empty?
-		abort "ERROR: URL cannot contain spaces." if @@url.include?("\ ")
+		abort "ERROR: URL cannot contain spaces." if url.include? "\ "
 	end
 end
