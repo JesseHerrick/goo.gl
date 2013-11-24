@@ -1,12 +1,16 @@
 require 'json'
 
 class Googl
+	attr_accessor :url
+
 	def expand
-		response = RestClient.get(@@url)
-		if response.code == 200
-			puts JSON.pretty_generate(response.body)
+		@url = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=#{url}"
+		@response = RestClient.get(@url)
+		if @response.code == 200
+			json_response = JSON.parse(@response)
+			puts json_response["longUrl"]
 		else
-			puts "ERROR: #{response.code}"
+			abort "ERROR: #{@response.code}"
 		end
 	end
 end
