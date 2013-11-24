@@ -2,26 +2,29 @@
 
 $: << File.expand_path(File.dirname(__FILE__) + "/../lib")
 
-# Lib Files
-require 'jekyll-ftp/version'
-
 # Gems
 require "rubygems"
 require "rake"
 require "colorize"
 
+# Helpers
+def test(file)
+	puts `ruby -I . test/test_#{file}.rb`
+end
+
 # Tasks
 desc "Run tests." 
 task :default do
-	
+	puts "Testing shorten...".yellow
+	test("shorten")
+	puts "Testing expand...".yellow
+	test("expand")
 end
 
-desc "Test shorten method"
 task :shorten do
-	`ruby -I . test/shorten.rb`
+	test("shorten")
 end
 
-desc "Test expand command."
 task :expand do
-	`ruby -I . test/expand.rb`
+	test("expand")
 end
