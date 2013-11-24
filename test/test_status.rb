@@ -6,6 +6,6 @@ class TestStatus < Test::Unit::TestCase
 		link = Googl.new
 		link.url = "http://goo.gl/1CtCJa"
 		expected = link.status
-		# assert_equal(expected, "OK")
+		assert_equal(expected, "OK")
 	end
 end
