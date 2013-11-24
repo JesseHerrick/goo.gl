@@ -1,9 +1,9 @@
-require 'uri'
 require 'json'
 require 'rest-client'
 
 class Googl
 	attr_accessor :url
+	
 	def shorten
 		request = {:longUrl => url}
 

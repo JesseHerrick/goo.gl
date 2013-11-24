@@ -1,4 +1,5 @@
 require 'json'
+require 'rest-client'
 
 class Googl
 	attr_accessor :url
@@ -7,7 +8,7 @@ class Googl
 		@url = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=#{url}"
 		@response = RestClient.get(@url)
 		if @response.code == 200
-			json_response = JSON.parse(@response)
+			json_response = JSON.parse(@response.body)
 			return json_response["longUrl"]
 		else
 			abort "ERROR: #{@response.code}"

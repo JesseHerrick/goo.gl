@@ -19,6 +19,8 @@ task :default do
 	test("shorten")
 	puts "Testing expand...".yellow
 	test("expand")
+	puts "Testing status...".yellow
+	test("status")
 end
 
 task :shorten do
@@ -27,4 +29,8 @@ end
 
 task :expand do
 	test("expand")
+end
+
+task :status do
+	test("status")
 end

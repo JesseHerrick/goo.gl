@@ -2,6 +2,7 @@ $:.unshift File.dirname(__FILE__)
 
 require 'googl/shorten'
 require 'googl/expand'
+require 'googl/status'
 
 class Googl
 	attr_accessor :url
