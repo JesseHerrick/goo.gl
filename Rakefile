@@ -5,7 +5,6 @@ $: << File.expand_path(File.dirname(__FILE__) + "/../lib")
 # Gems
 require "rubygems"
 require "rake"
-require "colorize"
 
 # Helpers
 def test(file)
