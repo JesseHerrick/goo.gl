@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    colorize (0.6.0)
     mime-types (2.0)
     multi_json (1.8.2)
     rake (10.1.0)
@@ -11,6 +12,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colorize
   multi_json
   rake
   rest-client
