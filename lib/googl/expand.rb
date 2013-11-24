@@ -8,7 +8,7 @@ class Googl
 		@response = RestClient.get(@url)
 		if @response.code == 200
 			json_response = JSON.parse(@response)
-			puts json_response["longUrl"]
+			return json_response["longUrl"]
 		else
 			abort "ERROR: #{@response.code}"
 		end
